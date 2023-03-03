@@ -21,6 +21,13 @@ img {
     padding-right: 30px;
 }
 
+@media (max-width: 767px) {
+    .inner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
 a {
     text-decoration: none;
     color: #082B48;
@@ -76,6 +83,12 @@ header {
     font-size: 15px;
     font-weight: 600;
     line-height: 36px;
+}
+
+@media (max-width: 767px) {
+    .header--nav {
+        display: none;
+    }
 }
 
 .top {
@@ -267,11 +280,26 @@ Profile
 
 ==============*/
 
+.section {
+    padding: 100px 0;
+}
+
+.section.section--gray {
+    background-color: #eee;
+}
+
 .section__title {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }
 
 .section__lead {
@@ -284,4 +312,219 @@ Profile
 
 .section__body {
     margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+    .section__body {
+        margin-top: 30px;
+    }
+}
+
+service-card {
+    padding: 24px 20px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+    background: #fff;
+}
+
+.service-card__image {
+    text-align: center;
+}
+
+.service-card__image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.service-card__title {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+}
+
+.service-card__content {
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+/* service */
+.service__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.service__card {
+    width: calc(33.3% - 24px * 2 / 3);
+}
+
+.service__card:nth-child(n + 2) {
+    margin-left: 24px;
+}
+
+@media (max-width: 767px) {
+    .service__card:nth-child(n + 2) {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .service__card {
+        width: 100%;
+    }
+}
+
+/* Work */
+.work__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.work__card {
+    width: calc(33.3% - 24px * 2 / 3);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+.work__card:not(:nth-child(3n + 1)) {
+    margin-left: 24px;
+}
+
+.work__card:not(:nth-child(3n + 1)) {
+    margin-left: 24px;
+}
+
+@media (max-width: 767px) {
+    .work__card:not(:nth-child(3n + 1)) {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .work__card {
+        width: 100%;
+    }
+
+    .work__card:nth-child(n + 2) {
+        margin-top: 24px;
+    }
+}
+
+/* Work Card */
+.work-card {
+    background: #fff;
+}
+
+.work-card__image {
+    text-align: center;
+}
+
+.work-card__image img {
+    width: 100%;
+    height: auto;
+}
+
+.work-card__body {
+    padding: 12px 12px 20px;
+}
+
+.work-card__title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.work-card__comment {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.work-card__linK {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.work-card__linK a {
+    text-decoration: none;
+}
+
+/* Contact */
+.contact__message {
+    text-align: center;
+}
+
+.contact__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.contact__item {
+    text-align: center;
+}
+
+.contact__item:nth-child(n + 2) {
+    margin-left: 60px;
+}
+
+@media (max-width: 767px) {
+    .contact__item:nth-child(n + 2) {
+        margin-left: 40px;
+    }
+}
+
+.contact__img {
+    display: block;
+}
+
+.contact__img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+    .contact__img img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.contact__name {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    background: #555;
+    color: #fff;
+    padding: 12px 0;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.footer__copyright {
+    text-align: center;
 }
