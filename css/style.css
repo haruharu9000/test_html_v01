@@ -320,7 +320,7 @@ Profile
     }
 }
 
-service-card {
+.service-card {
     padding: 24px 20px;
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
