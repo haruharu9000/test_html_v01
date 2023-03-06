@@ -4,12 +4,32 @@ body {
     padding: 0;
     color: #082B48;
     font-family: Verdana, Geneva, Tagoma, sans-serif;
-    line-height: 1.5;
+    line-height: 2;
     letter-spacing: 0.05em;
 }
 
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #082B48;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    list-style: none;
+}
+
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -28,94 +48,144 @@ img {
     }
 }
 
-a {
-    text-decoration: none;
-    color: #082B48;
+.header {
+    padding: 0;
 }
 
-a:hover {
-    opacity: 0.7;
+.header__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 60px;
 }
 
-.container {
-    width: 90%;
-    max-width: 980px;
-    margin: auto;
+.header__logo {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
-.clear::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-ul {
-    list-style: none;
-}
-
-/*======================
-header
-======================*/
-
-header {
-    padding: 20px 0;
-}
-
-.header-left {
-    float: left;
-}
-
-.header-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.header-right {
-    float: right;
-}
-
-.header-nav-item {
-    float: left;
-    margin-left: 50px;
-}
-
-.header-nav-item a {
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 36px;
+.header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
 }
 
 @media (max-width: 767px) {
-    .header--nav {
+    .header__nav {
         display: none;
     }
 }
 
-.top {
-    background-color: lightblue;
-    height: 400px;
+.header__hamburger {
+    margin-left: auto;
+    display: none;
 }
 
-/*=================
-top
-=================*/
-
-.top {
-    background-image: url(../img/main-vsual.jpg);
-    background-size: cover;
-    padding: 80px 0;
+@media (max-width: 767px) {
+    .header__hamburger {
+        display: block;
+    }
 }
 
-.top-title {
-    font-size: 48px;
-    font-weight: bold;
+.header__link {
+    text-decoration: none;
+    color: #333;
+}
+
+.header__link:hover {
+    color: #333;
+}
+
+.header__link:nth-child(n + 2) {
+    margin-left: 32px;
+}
+
+.header-drawer__link {
+    border-top: 1px dotted #777;
+}
+
+.header-drawer__link a {
+    padding: 12px 16px;
+    display: block;
+    color: #333;
+}
+
+.header-drawer__link a:hover {
+    color: #333;
+}
+
+/*======================
+MainVisual
+======================*/
+
+.main-visual {
+    width: 100%;
+    height: 650px;
+    background: #aaa url(../img/main-vsual.jpg) no-repeat center center/cover;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .main-visual {
+        height: 300px;
+    }
+}
+
+.main-visual::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    position: absolute;
+}
+
+.main-visual__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: #fff;
+    z-index: 3;
     text-align: center;
-    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    padding: 0 16px;
 }
 
-.top-subtitle {
-    font-size: 18px;
-    text-align: center;
+.main-visual__text {
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+}
+
+@media (max-width: 767px) {
+    .main-visual__text {
+        font-size: 42px;
+    }
+}
+
+.main-visual__lead {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+    .main-visual__lead {
+        font-size: 14px;
+    }
 }
 
 /*=================
@@ -123,33 +193,42 @@ section共通クラス
 =================*/
 
 .section {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
+.section.section--gray {
+    background-color: #eee;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+.section__title {
     text-align: center;
-    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
-/*================
-about
-=================*/
-
-.about-left {
-    float: auto;
-    width: 48%;
+.section__lead {
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
-.about-right {
-    float: right;
-    width: 48%;
+.section__body {
+    margin-top: 50px;
 }
 
-.profile-card__image {
-    display: flex;
-    justify-content: flex-end;
+@media (max-width: 767px) {
+    .section__body {
+        margin-top: 30px;
+    }
 }
 
 /*=============
@@ -277,48 +356,8 @@ Profile
 }
 
 /*==============
-
+service Card
 ==============*/
-
-.section {
-    padding: 100px 0;
-}
-
-.section.section--gray {
-    background-color: #eee;
-}
-
-.section__title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-@media (max-width: 767px) {
-    .section {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-}
-
-.section__lead {
-    text-align: center;
-    margin-top: 2px;
-    color: #555;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-}
-
-.section__body {
-    margin-top: 50px;
-}
-
-@media (max-width: 767px) {
-    .section__body {
-        margin-top: 30px;
-    }
-}
 
 .service-card {
     padding: 24px 20px;
@@ -349,7 +388,11 @@ Profile
     margin-top: 12px;
 }
 
-/* service */
+
+/*==============
+service
+==============*/
+
 .service__cards {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -379,7 +422,10 @@ Profile
     }
 }
 
-/* Work */
+/*==============
+Work
+==============*/
+
 .work__cards {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -421,7 +467,7 @@ Profile
     }
 }
 
-/* Work Card */
+
 .work-card {
     background: #fff;
 }
@@ -460,7 +506,10 @@ Profile
     text-decoration: none;
 }
 
-/* Contact */
+/*==============
+Contact
+==============*/
+
 .contact__message {
     text-align: center;
 }
@@ -515,7 +564,10 @@ Profile
     font-size: 14px;
 }
 
-/* Footer */
+/*==============
+Footer
+==============*/
+
 .footer {
     background: #555;
     color: #fff;
